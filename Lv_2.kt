@@ -8,39 +8,32 @@ package com.example.chapter1
 // 파일의 목표
 // 반복문과 조건문을 사용해 보자
 // 누적 계산기처럼 해보자..... 어떻게 하는지는 알겠는데 어떻게 만드는지는 모르겠다
+// ...어찌 저찌 수정
+
 fun main() {
-    var cal = Calculator2().adc()
-    println(cal)
+    var cal = Calculator2().calculate()
 }
 
 class Calculator2() {
-
-    fun adc() {
+    fun calculate() {
+        var total = readln().toInt()
         while (true) {
-            var num1 = readln().toInt()
-            val op = readLine().toString()
-            var num2 = readln().toInt()
+            val op = readln()
+            val num = readln().toInt()
 
-            var total = when (op) {
-                "+" -> num1 + num2
 
-                "-" -> num1 - num2
-
-                "*" -> num1 * num2
-
-                "/" -> num1 / num2
-
-                "%" -> num1 % num2
-
-                else -> break
-
+            when (op) {
+                "+" -> total += num
+                "-" -> total -= num
+                "*" -> total *= num
+                "/" -> total /= num
+                else -> println("잘못된 연산자입니다.")
             }
             if (total == -1) {
-                println("다시 진행해주세요")
                 break
             }
-
-            println("답은 ${num1} ${op} ${num2} = ${total}")
+            println("현재 결과: ${total}")
         }
+        println("최종 결과: ${total}")
     }
 }
