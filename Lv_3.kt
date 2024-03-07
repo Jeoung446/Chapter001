@@ -10,6 +10,7 @@ package com.example.chapter1
 // 파일의 목표
 // override를 사용해 보자
 // 단일책임원칙이라는 의미를 알아보자
+// 뼈대만 완성된 수준...
 fun main() {
     var a = Add().add()
 }
